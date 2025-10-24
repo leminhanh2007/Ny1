@@ -27,7 +27,7 @@ noButton.addEventListener("click", function () {
 });
 
 function handleYesClick() {
-  titleElement.innerHTML = "Anh iu bé ,Anh hứa hongg làm bé buồn nữa đouuu :3";
+  titleElement.innerHTML = "mình iu bn ,mình hứa hongg làm bn thất vọng nữa đouuu :3";
   buttonsContainer.classList.add("hidden");
   changeImage("yes");
 }
@@ -55,8 +55,17 @@ function generateMessage(noCount) {
 }
 
 function changeImage(image) {
-  catImg.src = `img/cat-${image}.jpg`;
-}
+  const catImage =  {
+    0: "img/cat-0.jpg",
+    1: "img/cat-1.jpg",
+    2: "img/cat-2.jpg",
+    3: "img/cat-3.jpg",
+    4: "img/cat-4.jpg",
+    yes: "img/cat-yes.jpg"
+  };
+// Nếu image không có trong danh sách thì mặc định là cat-0
+  catImg.src = catImages[image] || catImages[0];
+    }
 
 function updateNoButtonText() {
   noButton.innerHTML = generateMessage(noCount);
