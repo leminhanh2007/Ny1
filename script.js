@@ -55,18 +55,9 @@ function generateMessage(noCount) {
 }
 
 function changeImage(image) {
-  const catImage =  {
-    0: "img/cat-0.jpg",
-    1: "img/cat-1.jpg",
-    2: "img/cat-2.jpg",
-    3: "img/cat-3.jpg",
-    4: "img/cat-4.jpg",
-    yes: "img/cat-yes.jpg"
-  };
-// Nếu image không có trong danh sách thì mặc định là cat-0
-  catImg.src = catImages[image] || catImages[0];
-    }
-
+  catImage.src = `img/cat-${image}.jpg`;
+}  
+  
 function updateNoButtonText() {
   noButton.innerHTML = generateMessage(noCount);
 }
